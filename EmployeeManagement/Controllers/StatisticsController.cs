@@ -7,6 +7,7 @@ namespace EmployeeManagement.Controllers
 {
     [Route("api/statistics")]
     [ApiController]
+    [Produces("application/json")]
     public class StatisticsController : ControllerBase
     {
         private readonly IMapper _mapper;

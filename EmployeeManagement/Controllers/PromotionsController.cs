@@ -7,6 +7,7 @@ namespace EmployeeManagement.Controllers
 {
     [Route("api/promotions")]
     [ApiController]
+    [Produces("application/json")]
     public class PromotionsController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
