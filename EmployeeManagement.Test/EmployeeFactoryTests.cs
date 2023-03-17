@@ -4,9 +4,22 @@ using Xunit;
 
 namespace EmployeeManagement.Test
 {
-    public class EmployeeFactoryTests
+    public class EmployeeFactoryTests : IDisposable
     {
+        private readonly EmployeeFactory _employeeFactory;
+
+        public EmployeeFactoryTests()
+        {
+            _employeeFactory = new EmployeeFactory();
+        }
+
+        public void Dispose()
+        {
+            
+        }
+
         [Fact]
+        [Trait("Category", "EmployeeFactory_CreateEmployee_Salary")]
         public void CreateEmployee_ConstructInternalEmployee_SalaryMustBe2500()
         {
             var employeeFactory = new EmployeeFactory();
@@ -18,6 +31,7 @@ namespace EmployeeManagement.Test
         }
 
         [Fact]
+        [Trait("Category", "EmployeeFactory_CreateEmployee_Salary")]
         public void CreateEmployee_ConstructInternalEmployee_SalaryMustBeBetween2500And3500()
         {
             // Arrange
@@ -31,6 +45,7 @@ namespace EmployeeManagement.Test
         }
 
         [Fact]
+        [Trait("Category", "EmployeeFactory_CreateEmployee_Salary")]
         public void CreateEmployee_ConstructInternalEmployee_SalaryMustBeBetween2500And3500_Alternative()
         {
             // Arrange
@@ -45,6 +60,7 @@ namespace EmployeeManagement.Test
         }
 
         [Fact]
+        [Trait("Category", "EmployeeFactory_CreateEmployee_Salary")]
         public void CreateEmployee_ConstructInternalEmployee_SalaryMustBeBetween2500And3500_AlternativeWithInRange()
         {
             // Arrange
@@ -58,7 +74,8 @@ namespace EmployeeManagement.Test
         }
 
 
-        [Fact]
+        [Fact(Skip = "Skipping this one for demo purposes")]
+        [Trait("Category", "EmployeeFactory_CreateEmployee_Salary")]
         public void CreateEmployee_ConstructInternalEmployee_SalaryMustBe2500_PrecisionExample()
         {
             // Arrange
@@ -73,6 +90,7 @@ namespace EmployeeManagement.Test
         }
 
         [Fact]
+        [Trait("Category", "EmployeeFactory_CreateEmployee_ReturnType")]
         public void CreateEmployee_IsExternalIsTrue_ReturnTypeMustBeExternalEmployee()
         {
             // Arrange
@@ -85,5 +103,6 @@ namespace EmployeeManagement.Test
             Assert.IsType<ExternalEmployee>(employee);
             //Assert.IsAssignableFrom<Employee>(employee);
         }
+
     }
 }
