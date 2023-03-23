@@ -10,10 +10,7 @@ namespace EmployeeManagement.Business
         /// <summary>
         /// Create an employee
         /// </summary>
-        public virtual Employee CreateEmployee(string firstName,
-            string lastName, 
-            string? company = null, 
-            bool isExternal = false)
+        public virtual Employee CreateEmployee(string firstName, string lastName, string? company = null, bool isExternal = false)
         {
             if (string.IsNullOrEmpty(firstName))
             {
